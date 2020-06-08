@@ -1,6 +1,7 @@
 /* global JitsiMeetJS config*/
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import './App.css';
+import BubbleContainer from './bubbleContainer.js'
 import $ from 'jquery'
 import { Seat } from './components/Seat';
 import { ConnectForm } from './components/ConnectForm';
@@ -73,22 +74,69 @@ const loadAndConnect = ({ domain, room}) => {
     })
 }
 
+var BUBBLECOLLECTION;
+var MAP = {};
+var DEFINED = false;
+function RAF() 
+{
+        window.requestAnimationFrame(RAF);
+        BUBBLECOLLECTION.doStep();
+}
+function plippo(track) 
+	{
+
+ if (!BUBBLECOLLECTION) {
+     	BUBBLECOLLECTION = new BubbleContainer(document.getElementById("container"));
+}
+
+	var VIDEO = document.createElement("video");
+	VIDEO.style.height = "100%";
+	VIDEO.style.flexShrink = "0";
+	VIDEO.style.center = "center";
+	VIDEO.autoplay = '1';
+	track.attach(VIDEO);
+	if (typeof MAP[track.getId()] === 'undefined')
+		{
+		MAP[track.getId()] = VIDEO;
+      	   BUBBLECOLLECTION.insert(VIDEO);
+		}
+if (DEFINED === false)
+{
+DEFINED = true;
+RAF();
+}
+	}
+
 const useTracks = () => {
   const [tracks, setTracks] = useState([])
   
   const addTrack = useCallback((track) => {
     setTracks((tracks) => {
       const hasTrack = tracks.find(_track => track.getId() === _track.getId())
-
+      
       if(hasTrack) return tracks;
 
-      return [...tracks, track]
-      
+
+      if (track.getType() === "video")
+      {
+      	plippo(track);
+	}
+     return [...tracks, track];
     });
   }, [setTracks])
 
   const removeTrack = useCallback((track) => {
-    setTracks((tracks) => tracks.filter(_track => track.getId() !== _track.getId()))
+
+		  if (track.getType() === "video")
+		  	if (BUBBLECOLLECTION)
+				if (typeof MAP[track.getId()] !== 'undefined')
+					{
+					BUBBLECOLLECTION.erase(MAP[track.getId()]);
+					MAP[track.getId()] = undefined;
+					}
+				  	
+
+    setTracks((tracks) => tracks.filter(_track => track.getId() !== _track.getId()));
   }, [setTracks])
 
   return [tracks, addTrack, removeTrack]
@@ -104,6 +152,7 @@ const getDefaultParamsValue = () => {
   }
 }
 
+
 function App() {
 
   useWindowSize()
@@ -117,7 +166,10 @@ function App() {
   const [audioTracks, addAudioTrack, removeAudioTrack] = useTracks();
   
   const addTrack = useCallback((track) => {
-    if(track.getType() === 'video') addVideoTrack(track)
+    if(track.getType() === 'video') 
+    {
+    addVideoTrack(track);
+    }
     if(track.getType() === 'audio') addAudioTrack(track)
   }, [ addVideoTrack, addAudioTrack ])
 
@@ -156,14 +208,14 @@ function App() {
         { mainState === 'init' && <ConnectForm connect={connect} domain={domain} room={room} setRoom={setRoom} setDomain={setDomain} /> }
         { mainState === 'loading' && 'Loading' }
         { mainState === 'started' &&
-        <div style={{
+        <div id="container" style={{
           height: '100vh', width: '100vw', maxHeight: '100vw', maxWidth: '100vh',
           background: 'rgba(0, 100,100, 1)',
-          position: 'relative',
-          borderRadius: '100%'
+          position: 'relative'
       }}>
+}
         {
-          videoTracks.map((track, index) => <Seat track={track} index={index} length={videoTracks.length} key={track.getId()} />)
+     //     videoTracks.map((track, index) => <Seat track={track} xPos={Math.random()} yPos={Math.random()} seatSize={0.3} length={videoTracks.length} key={track.getId()} />)
         }
         {
           audioTracks.map((track, index) => <Audio track={track} index={index} key={track.getId()} />)
@@ -176,3 +228,4 @@ function App() {
 }
 
 export default App;
+
