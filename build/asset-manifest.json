@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/jitsi-bubble/static/css/main.aeb1d389.chunk.css",
+    "main.js": "/jitsi-bubble/static/js/main.97353c39.chunk.js",
+    "main.js.map": "/jitsi-bubble/static/js/main.97353c39.chunk.js.map",
+    "runtime-main.js": "/jitsi-bubble/static/js/runtime-main.ef5bf1aa.js",
+    "runtime-main.js.map": "/jitsi-bubble/static/js/runtime-main.ef5bf1aa.js.map",
+    "static/js/2.c7ffa51c.chunk.js": "/jitsi-bubble/static/js/2.c7ffa51c.chunk.js",
+    "static/js/2.c7ffa51c.chunk.js.map": "/jitsi-bubble/static/js/2.c7ffa51c.chunk.js.map",
+    "index.html": "/jitsi-bubble/index.html",
+    "precache-manifest.70bdb3754add8064ae134e66227eaeaa.js": "/jitsi-bubble/precache-manifest.70bdb3754add8064ae134e66227eaeaa.js",
+    "service-worker.js": "/jitsi-bubble/service-worker.js",
+    "static/css/main.aeb1d389.chunk.css.map": "/jitsi-bubble/static/css/main.aeb1d389.chunk.css.map",
+    "static/js/2.c7ffa51c.chunk.js.LICENSE.txt": "/jitsi-bubble/static/js/2.c7ffa51c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef5bf1aa.js",
+    "static/js/2.c7ffa51c.chunk.js",
+    "static/css/main.aeb1d389.chunk.css",
+    "static/js/main.97353c39.chunk.js"
+  ]
+}
