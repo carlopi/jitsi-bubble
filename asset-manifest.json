@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/jitsi-bubble/static/css/main.aeb1d389.chunk.css",
-    "main.js": "/jitsi-bubble/static/js/main.97353c39.chunk.js",
-    "main.js.map": "/jitsi-bubble/static/js/main.97353c39.chunk.js.map",
-    "runtime-main.js": "/jitsi-bubble/static/js/runtime-main.ef5bf1aa.js",
-    "runtime-main.js.map": "/jitsi-bubble/static/js/runtime-main.ef5bf1aa.js.map",
-    "static/js/2.c7ffa51c.chunk.js": "/jitsi-bubble/static/js/2.c7ffa51c.chunk.js",
-    "static/js/2.c7ffa51c.chunk.js.map": "/jitsi-bubble/static/js/2.c7ffa51c.chunk.js.map",
+    "main.js": "/jitsi-bubble/static/js/main.a8c14815.chunk.js",
+    "main.js.map": "/jitsi-bubble/static/js/main.a8c14815.chunk.js.map",
+    "runtime-main.js": "/jitsi-bubble/static/js/runtime-main.a46c02b4.js",
+    "runtime-main.js.map": "/jitsi-bubble/static/js/runtime-main.a46c02b4.js.map",
+    "static/js/2.f459508b.chunk.js": "/jitsi-bubble/static/js/2.f459508b.chunk.js",
+    "static/js/2.f459508b.chunk.js.map": "/jitsi-bubble/static/js/2.f459508b.chunk.js.map",
     "index.html": "/jitsi-bubble/index.html",
-    "precache-manifest.70bdb3754add8064ae134e66227eaeaa.js": "/jitsi-bubble/precache-manifest.70bdb3754add8064ae134e66227eaeaa.js",
+    "precache-manifest.dde57c0a565a0761ab5e6c1006ede720.js": "/jitsi-bubble/precache-manifest.dde57c0a565a0761ab5e6c1006ede720.js",
     "service-worker.js": "/jitsi-bubble/service-worker.js",
     "static/css/main.aeb1d389.chunk.css.map": "/jitsi-bubble/static/css/main.aeb1d389.chunk.css.map",
-    "static/js/2.c7ffa51c.chunk.js.LICENSE.txt": "/jitsi-bubble/static/js/2.c7ffa51c.chunk.js.LICENSE.txt"
+    "static/js/2.f459508b.chunk.js.LICENSE.txt": "/jitsi-bubble/static/js/2.f459508b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ef5bf1aa.js",
-    "static/js/2.c7ffa51c.chunk.js",
+    "static/js/runtime-main.a46c02b4.js",
+    "static/js/2.f459508b.chunk.js",
     "static/css/main.aeb1d389.chunk.css",
-    "static/js/main.97353c39.chunk.js"
+    "static/js/main.a8c14815.chunk.js"
   ]
 }
