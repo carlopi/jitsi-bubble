@@ -146,7 +146,7 @@ const getDefaultParamsValue = () => {
   const params = document.location.search.length > 1 ? qs.parse(document.location.search.slice(1)) : {}
   debugger;
   return {
-    room: params.room ?? 'daily_standup',
+    room: params.room ?? 'bubble_test',
     domain: params.domain ?? 'meet.jit.si',
     autoJoin: params.autojoin ?? false,
   }
